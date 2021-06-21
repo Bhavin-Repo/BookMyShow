@@ -1,0 +1,22 @@
+<div class="card">
+  <h5>Movie For You!!!</h5>
+  
+  <table class="table table-dark table-stripped table-hover">
+      <thead>
+          <tr>
+              <th>Title</th>
+              <th>Language</th>
+              <th>Location</th>
+              <th>ImdbRating</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let movie of movies" (click)="onRowSelect($event,movie)">
+                <td>{{movie.Title}}</td>
+                <td>{{movie.Language}}</td>
+                <td>{{movie.Location}}</td>
+                <td>{{movie.imdbRating}}</td>
+            </tr>
+        </tbody>
+  </table>
+</div>
