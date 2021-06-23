@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   onRowSelect(event,data) {
     debugger;
     alert("Row Clicked!");
-    this.router.navigate(['/movies', { Title: data.Title}]);
+    this.router.navigate(['/movies', {Title: data.Title}]);
 }
 
 }

@@ -1,0 +1,11 @@
+.section p {
+    display: inline;
+}
+
+p {
+    font-weight: bold;
+}
+
+.stillSection img{
+    display: inline-flex;
+}

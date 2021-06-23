@@ -1,10 +1,24 @@
 <div class="container">
     <h2>Movie Details</h2>
-    
+    <br>
     <div *ngIf="movies">
-        Title: <h3>{{ movie.Title | titlecase }}</h3>
-        Language: <p><strong>{{ movie.Language | titlecase }}</strong></p>
-        Location: <p><strong>{{ movie.Location | titlecase }}</strong></p>
-        Rating: <p><strong>{{ movie.imdbRating }}</strong></p>
+        <h3>{{ movie.Title | titlecase }}</h3> 
+        <div class="section">
+            Language: <p><strong>{{ movie.Language | titlecase }}</strong></p> |
+            Location: <p><strong>{{ movie.Location | titlecase }}</strong></p> |
+            Rating: <p><strong>{{ movie.imdbRating }}</strong></p>
+        </div>
+        <br>        
+       <div class="plot">
+        Plot: <p>{{ movie.Plot }}</p>
+       </div>
+        <div class="poster">
+            Poster:<br><img src={{movie.Poster}} alt="Movie Poster" [style.width.px]="200"/>
+        </div>
+        <br><br>
+        Stills:
+        <div *ngFor="let still of movie.Stills" class="stillSection">
+            <img src={{movie.still}} alt="Movie Still" [style.width.px]="200"/>
+        </div>
     </div>
 </div>

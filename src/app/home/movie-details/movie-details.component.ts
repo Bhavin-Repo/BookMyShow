@@ -22,7 +22,7 @@ export class MovieDetailsComponent implements OnInit {
   const titleFromRoute = routeParams.get('Title');
 
   // Find the movie that correspond with the id provided in route.
-  this.movie = this.movies.find(movie => movie.imdbID === titleFromRoute);
+  this.movie = this.movies.find(movie => movie.Title === titleFromRoute);
   }
 
 }
