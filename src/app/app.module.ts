@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailsComponent } from './home/movie-details/movie-details.component';
+import { RouterModule } from '@angular/router';
+
+const routes = [{ path: '', component: HomeComponent },
+                { path: 'movies/:imdbID', component: MovieDetailsComponent }];
 
 @NgModule({
   declarations: [
@@ -12,7 +16,8 @@ import { MovieDetailsComponent } from './home/movie-details/movie-details.compon
     MovieDetailsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,11 @@
-<p>This page will contain movie details as a list</p>
+<div class="container">
+    <h2>Movie Details</h2>
+    
+    <div *ngIf="movies">
+        Title: <h3>{{ movie.Title | titlecase }}</h3>
+        Language: <p><strong>{{ movie.Language | titlecase }}</strong></p>
+        Location: <p><strong>{{ movie.Location | titlecase }}</strong></p>
+        Rating: <p><strong>{{ movie.imdbRating }}</strong></p>
+
+    </div>
+</div>

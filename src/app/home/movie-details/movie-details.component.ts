@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MovieEntriesService } from 'src/app/Core/movie-entries.service';
+import { Movie } from 'src/app/Model/movies';
 
 @Component({
   selector: 'app-movie-details',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
+  movie : Movie;
+  movies: Movie[]
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private movieService : MovieEntriesService) {
+    this.movies = movieService.movies;
+   }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    // First get the movie id from the current route.
+  const routeParams = this.route.snapshot.paramMap;
+  const titleFromRoute = routeParams.get('Title');
+
+  // Find the movie that correspond with the id provided in route.
+  this.movie = this.movies.find(movie => movie.imdbID === titleFromRoute);
   }
 
 }
