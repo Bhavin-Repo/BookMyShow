@@ -6,6 +6,6 @@ p {
     font-weight: bold;
 }
 
-.stillSection img{
-    display: inline-flex;
+.stillSection {
+    display: inline;
 }

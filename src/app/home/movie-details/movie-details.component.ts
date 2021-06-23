@@ -17,12 +17,13 @@ export class MovieDetailsComponent implements OnInit {
    }
 
   ngOnInit(){
-    // First get the movie id from the current route.
-  const routeParams = this.route.snapshot.paramMap;
-  const titleFromRoute = routeParams.get('Title');
+  //   // First get the movie id from the current route.
+  // const routeParams = this.route.snapshot.paramMap;
+  // const titleFromRoute = routeParams.get('Title');
 
   // Find the movie that correspond with the id provided in route.
-  this.movie = this.movies.find(movie => movie.Title === titleFromRoute);
+  this.movie = this.movies.find(movie => movie.Title === this.movieService.selectedMovie);
+  this.movieService.selectedMovie = null;
   }
 
 }

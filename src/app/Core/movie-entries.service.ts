@@ -6,7 +6,7 @@ import { Movie } from "../Model/movies";
 })
 
 export class MovieEntriesService {
-
+    public selectedMovie : String = ""; 
     public movies : Movie[] = [
         {
             "Language": "ENGLISH",

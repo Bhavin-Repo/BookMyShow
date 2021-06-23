@@ -7,7 +7,7 @@ import { MovieDetailsComponent } from './home/movie-details/movie-details.compon
 import { RouterModule } from '@angular/router';
 
 const routes = [{ path: '', component: HomeComponent },
-                { path: 'movies/:Title', component: MovieDetailsComponent }];
+                { path: 'movies', component: MovieDetailsComponent }];
 
 @NgModule({
   declarations: [

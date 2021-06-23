@@ -10,13 +10,13 @@
         </div>
         <br>        
        <div class="plot">
-        Plot: <p>{{ movie.Plot }}</p>
+        <p>{{ movie.Plot }}</p>
        </div>
         <div class="poster">
-            Poster:<br><img src={{movie.Poster}} alt="Movie Poster" [style.width.px]="200"/>
+            <img src={{movie.Poster}} alt="Movie Poster" [style.width.px]="200"/>
         </div>
-        <br><br>
-        Stills:
+        <br>
+        <br>
         <div *ngFor="let still of movie.Stills" class="stillSection">
             <img src={{movie.still}} alt="Movie Still" [style.width.px]="200"/>
         </div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { MovieEntriesService } from './Core/movie-entries.service';
 
 
 @Component({
@@ -9,7 +11,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'BookMyShow';
 
-  constructor(){
+  constructor(private route: Router){
 
+  }
+
+  onClick() {
+    this.route.navigateByUrl('');
   }
 }

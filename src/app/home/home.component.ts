@@ -11,7 +11,7 @@ import { Movie } from '../Model/movies';
 export class HomeComponent implements OnInit {
 
   movies : Movie[];
-  selectedMovie : Movie;
+
 
   constructor(private movieService : MovieEntriesService, private router : Router) { }
 
@@ -23,7 +23,8 @@ export class HomeComponent implements OnInit {
   onRowSelect(event,data) {
     debugger;
     alert("Row Clicked!");
-    this.router.navigate(['/movies', {Title: data.Title}]);
+    this.movieService.selectedMovie = data.Title;
+    this.router.navigateByUrl('/movies');
 }
 
 }
