@@ -11,15 +11,11 @@
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor = "let movie of movies" click="onRowSelect($event, movie)">
+            <tr *ngFor = "let movie of movies" (click)="onRowSelect($event, movie)">
                 <td>{{movie.Title}}</td>
                 <td>{{movie.Language}}</td>
                 <td>{{movie.Location}}</td>
                 <td>{{movie.imdbRating}}</td>
-                <a [title]="movie.Title" [routerLink]="['/movies', movie.imdbID]"><td>Detail
-                </td>
-            </a>
-                
             </tr>
         </tbody>
   </table>

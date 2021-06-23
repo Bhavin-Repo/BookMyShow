@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MovieEntriesService } from '../Core/movie-entries.service';
 import { Movie } from '../Model/movies';
 
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   movies : Movie[];
   selectedMovie : Movie;
 
-  constructor(private movieService : MovieEntriesService) { }
+  constructor(private movieService : MovieEntriesService, private router : Router) { }
 
   ngOnInit(): void {
     this.movies = this.movieService.movies;
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
   onRowSelect(event,data) {
     debugger;
     alert("Row Clicked!");
+    this.router.navigate(['/movies', { Title: data.Title}]);
 }
 
 }
