@@ -14,7 +14,7 @@
                 <th pSortableColumn="Title">Title <p-sortIcon field="Title"></p-sortIcon></th>
                 <th pSortableColumn="Language">Language <p-sortIcon field="Language"></p-sortIcon></th>
                 <th pSortableColumn="Location">Location <p-sortIcon field="Location"></p-sortIcon></th>
-                <th pSortableColumn="ImdbRating">ImdbRating <p-sortIcon field="ImdbRating"></p-sortIcon></th>
+                <th pSortableColumn="imdbRating">ImdbRating<p-sortIcon field="imdbRating"></p-sortIcon></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-movie>
@@ -22,7 +22,7 @@
                 <td>{{movie.Title}}</td>
                 <td>{{movie.Language}}</td>
                 <td>{{movie.Location}}</td>
-                <td>{{movie.imdbRating}}</td>
+                <td><p-rating [ngModel]="movie.imdbRating" readonly="false" stars="10" [cancel]="false"></p-rating></td>
             </tr>
         </ng-template>
     </p-table>
