@@ -6,7 +6,7 @@
         <div class="section">
             Language: <p><strong>{{ movie.Language | titlecase }}</strong></p> |
             Location: <p><strong>{{ movie.Location | titlecase }}</strong></p> |
-            Rating: <p><strong>{{ movie.imdbRating }}</strong></p>
+            Rating: <p><p-rating [ngModel]="movie.imdbRating" readonly="false" stars="10" [cancel]="false"></p-rating></p>
         </div>
         <br>        
        <div class="plot">
