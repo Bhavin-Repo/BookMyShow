@@ -1,15 +1,5 @@
-import { Injectable } from "@angular/core";
-import { Movie } from "../Model/movies";
-import { HttpClient } from '@angular/common/http';
-
-
-@Injectable({
-    providedIn : 'root'
-})
-
-export class MovieEntriesService {
-    public selectedMovie : String = ""; 
-    public movies : Movie[] = [
+{
+    "movies": [
         {
             "Language": "ENGLISH",
             "Location": "PUNE",
@@ -201,10 +191,4 @@ export class MovieEntriesService {
             "listingType": "NOW_SHOWING"
         }
     ]
-
-    constructor(private http : HttpClient){}
-
-    public getEntries(){
-        return this.http.get<Movie[]>('/api/movies');
-    }
 }
