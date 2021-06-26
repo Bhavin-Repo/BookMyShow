@@ -1,22 +1,29 @@
 <div class="card">
-  <h5>Movie For You!!!</h5>
-  
-  <table class="table table-dark table-stripped table-hover">
-      <thead>
-          <tr>
-              <th>Title</th>
-              <th>Language</th>
-              <th>Location</th>
-              <th>ImdbRating</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor = "let movie of movies" (click)="onRowSelect($event, movie)">
+    <h5>Movies for you!!</h5>
+    <p-table [value]="movies"  #dt1 [globalFilterFields]="['Title','Language','Location']">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+                <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="      Search keyword" />
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="Title">Title <p-sortIcon field="Title"></p-sortIcon></th>
+                <th pSortableColumn="Language">Language <p-sortIcon field="Language"></p-sortIcon></th>
+                <th pSortableColumn="Location">Location <p-sortIcon field="Location"></p-sortIcon></th>
+                <th pSortableColumn="ImdbRating">ImdbRating <p-sortIcon field="ImdbRating"></p-sortIcon></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-movie>
+            <tr>
                 <td>{{movie.Title}}</td>
                 <td>{{movie.Language}}</td>
                 <td>{{movie.Location}}</td>
                 <td>{{movie.imdbRating}}</td>
             </tr>
-        </tbody>
-  </table>
+        </ng-template>
+    </p-table>
 </div>
