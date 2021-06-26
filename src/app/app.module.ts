@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailsComponent } from './home/movie-details/movie-details.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import {TableModule} from 'primeng/table';
 
-const routes = [{ path: '', component: HomeComponent },
+const routes: Routes = [{ path: '', component: HomeComponent },
                 { path: 'movies', component: MovieDetailsComponent }];
 
 @NgModule({
@@ -17,6 +18,7 @@ const routes = [{ path: '', component: HomeComponent },
   ],
   imports: [
     BrowserModule,
+    TableModule,
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
   ],
   providers: [],

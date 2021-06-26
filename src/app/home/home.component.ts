@@ -21,8 +21,6 @@ export class HomeComponent implements OnInit {
 
 
   onRowSelect(event,data) {
-    debugger;
-    alert("Row Clicked!");
     this.movieService.selectedMovie = data.Title;
     this.router.navigateByUrl('/movies');
 }
