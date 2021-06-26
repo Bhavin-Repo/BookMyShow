@@ -22,7 +22,7 @@
                 <td>{{movie.Title}}</td>
                 <td>{{movie.Language}}</td>
                 <td>{{movie.Location}}</td>
-                <td>{{movie.imdbRating}}</td>
+                <td><p-rating [ngModel]="movie.imdbRating" readonly="false" stars="10" [cancel]="false"></p-rating></td>
             </tr>
         </ng-template>
     </p-table>

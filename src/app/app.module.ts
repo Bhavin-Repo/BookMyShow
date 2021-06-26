@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailsComponent } from './home/movie-details/movie-details.component';
 import { RouterModule, Routes } from '@angular/router';
-import {TableModule} from 'primeng/table';
+import { TableModule } from 'primeng/table';
+import { RatingModule } from 'primeng/rating';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [{ path: '', component: HomeComponent },
                 { path: 'movies', component: MovieDetailsComponent }];
@@ -19,6 +21,8 @@ const routes: Routes = [{ path: '', component: HomeComponent },
   imports: [
     BrowserModule,
     TableModule,
+    RatingModule,
+    FormsModule,
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
   ],
   providers: [],
