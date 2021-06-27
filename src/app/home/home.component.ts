@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   onRowSelect(event,data) {
     this.movieService.selectedMovie = data.Title;
-    this.router.navigateByUrl('/movies');
-}
+    this.router.navigate(['/movies', this.movieService.selectedMovie]);
+  }
 
 }

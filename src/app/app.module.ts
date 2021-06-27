@@ -14,7 +14,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import {CarouselModule} from 'primeng/carousel';
 
 const routes: Routes = [{ path: '', component: HomeComponent },
-                { path: 'movies', component: MovieDetailsComponent }];
+                { path: 'movies/:Title', component: MovieDetailsComponent }];
 
 @NgModule({
   declarations: [
