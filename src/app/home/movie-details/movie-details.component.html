@@ -17,8 +17,13 @@
         </div>
         <br>
         <br>
-        <div *ngFor="let still of movie.Stills" class="stillSection">
-            <img src={{movie.still}} alt="Movie Still" [style.width.px]="200"/>
-        </div>
+        
+        <p-carousel [value]="movie.Stills" [numVisible]="3" [numScroll]="1">
+            <ng-template let-movieStill pTemplate="item">
+                <div class="p-lb-12">
+                    <img src="{{movieStill}}" [alt]="movie.name" class="movie-still"/>
+                </div>
+            </ng-template>
+        </p-carousel>
     </div>
 </div>
