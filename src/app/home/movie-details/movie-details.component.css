@@ -1,5 +1,5 @@
 .section p {
-    display: inline;
+    display: inline-block !important;
 }
 
 p {

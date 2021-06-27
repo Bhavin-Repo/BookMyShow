@@ -9,6 +9,7 @@ import { TableModule } from 'primeng/table';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { InputTextModule } from 'primeng/inputtext';
 
 const routes: Routes = [{ path: '', component: HomeComponent },
                 { path: 'movies', component: MovieDetailsComponent }];
@@ -25,7 +26,8 @@ const routes: Routes = [{ path: '', component: HomeComponent },
     RatingModule,
     FormsModule,
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
-    HttpClientModule
+    HttpClientModule,
+    InputTextModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

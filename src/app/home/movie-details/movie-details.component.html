@@ -5,9 +5,9 @@
         <h3>{{ movie.Title | titlecase }}</h3> 
         <div class="section">
             Language: <p><strong>{{ movie.Language | titlecase }}</strong></p> |
-            Location: <p><strong>{{ movie.Location | titlecase }}</strong></p> |
-            Rating: <p><p-rating [ngModel]="movie.imdbRating" readonly="false" stars="10" [cancel]="false"></p-rating></p>
-        </div>
+            Location: <p><strong>{{ movie.Location | titlecase }}</strong></p>
+            <p-rating [ngModel]="movie.imdbRating" readonly="false" stars="10" [cancel]="false"></p-rating>  
+        </div> 
         <br>        
        <div class="plot">
         <p>{{ movie.Plot }}</p>
