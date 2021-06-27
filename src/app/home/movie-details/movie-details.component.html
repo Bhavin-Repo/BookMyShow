@@ -18,7 +18,7 @@
         <br>
         <br>
         
-        <p-carousel [value]="movie.Stills" [numVisible]="3" [numScroll]="1">
+        <p-carousel [value]="movie.Stills" [numVisible]="1" [numScroll]="1">
             <ng-template let-movieStill pTemplate="item">
                 <div class="p-lb-12">
                     <img src="{{movieStill}}" [alt]="movie.name" class="movie-still"/>
