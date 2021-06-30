@@ -1,29 +1,65 @@
-<div class="container">
-    <h2>Movie Details</h2>
-    <br>
-    <div *ngIf="movies">
-        <h3>{{ movie.Title | titlecase }}</h3> 
-        <div class="section">
-            Language: <p><strong>{{ movie.Language | titlecase }}</strong></p> |
-            Location: <p><strong>{{ movie.Location | titlecase }}</strong></p>
-            <p-rating [ngModel]="movie.imdbRating" readonly="false" stars="10" [cancel]="false"></p-rating>  
-        </div> 
-        <br>        
-       <div class="plot">
-        <p>{{ movie.Plot }}</p>
-       </div>
-        <div class="poster">
-            <img src={{movie.Poster}} alt="Movie Poster" [style.width.px]="200"/>
-        </div>
-        <br>
-        <br>
-        
-        <p-carousel [value]="movie.Stills" [numVisible]="1" [numScroll]="1">
-            <ng-template let-movieStill pTemplate="item">
-                <div class="p-lb-12">
-                    <img src="{{movieStill}}" [alt]="movie.name" class="movie-still"/>
+<div class="card">
+    <div class="card-header">
+        <h2>Movie Details</h2>
+    </div>  
+    <div *ngIf="movies" class="card-body">
+        <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+               <div class="col-md-12">
+                <h3>{{ movie.Title | titlecase }}</h3> 
+               </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    Language: 
                 </div>
-            </ng-template>
-        </p-carousel>
+                <div class="col-md-8">
+                     {{ movie.Language | titlecase }}
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    Location: 
+                </div> 
+                <div class="col-md-8">
+                    {{ movie.Location | titlecase }} 
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                   Rating:
+                </div>
+                <div class="col-md-8">
+                    <p-rating [ngModel]="movie.imdbRating" readonly="false" stars="10" [cancel]="false"></p-rating>  
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    Plot:
+                </div>
+                <div class="col-md-8">
+                    {{ movie.Plot }}
+                </div>
+            </div>
+        </div>       
+       
+        <div class="col-md-4">
+            <img src={{movie.Poster}} alt="Movie Poster" [style.width.px]="250"/>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <p-carousel [value]="movie.Stills" [numVisible]="1" [style.height.px]="250" [numScroll]="1">
+                <ng-template let-movieStill pTemplate="item">
+                    <div class="p-lb-12">
+                        <img src="{{movieStill}}" [alt]="movie.name" class="movie-still"/>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div> 
+    </div>
+        
     </div>
 </div>

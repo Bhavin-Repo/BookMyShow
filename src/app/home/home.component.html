@@ -1,5 +1,8 @@
 <div class="card">
-    <h5>Movies for you!!</h5>
+    <div class="card-header">
+        <h5>Movies for you!!</h5>
+    </div>
+    <div class="card-body">
     <p-table [value]="movies"  #dt1 [globalFilterFields]="['Title','Language','Location']">
         <ng-template pTemplate="caption">
             <div class="p-d-flex">
@@ -26,4 +29,5 @@
             </tr>
         </ng-template>
     </p-table>
+</div>
 </div>
