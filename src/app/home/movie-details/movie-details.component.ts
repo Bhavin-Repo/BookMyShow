@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MovieEntriesService } from 'src/app/Core/movie-entries.service';
 import { Movie } from 'src/app/Model/movies';
 
@@ -12,7 +12,7 @@ export class MovieDetailsComponent implements OnInit {
   movie : Movie;
   movies: Movie[]
 
-  constructor(private route: ActivatedRoute, private movieService : MovieEntriesService) {
+  constructor(private route: ActivatedRoute, private movieService : MovieEntriesService, private router: Router) {
     this.movies = movieService.movies;
    }
 
@@ -27,5 +27,9 @@ export class MovieDetailsComponent implements OnInit {
     } else {
       this.movie = this.movies.find(movie => movie.Title === titleFromRoute);
     } 
+  }
+
+  onBack () : void {
+    this.router.navigate(['/']);
   }
 }
